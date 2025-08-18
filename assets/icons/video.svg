@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- YouTube-style rounded rectangle -->
+  <rect x="2" y="5" width="20" height="14" rx="3" fill="none" stroke="#333" stroke-width="1.5"/>
+  
+  <!-- Play triangle -->
+  <path d="M9 8.5L17 12L9 15.5V8.5Z" fill="#333"/>
+</svg>

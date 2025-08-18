@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>URSA — Unsupervised Real-world Skill Acquisition</title>
+  <meta name="description" content="URSA: autonomous robot skill acquisition with world models and quality-diversity algorithms." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Primary">
+      <a href="#top" class="brand">URSA</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="#paper">Abstract</a>
+        <a href="#videos">Key Results</a>
+        <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener noreferrer">Extended Video</a>
+        <a href="#bibtex">Cite</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+        <section class="hero container">
+      <h1>From Tabula Rasa to Emergent Abilities: Discovering Robot Skills via Real-World Unsupervised Quality-Diversity</h1>
+
+      <p class="authors">Luca Grillotti · Lisa Coiffard · Oscar Pang · Maxence Faldor · Antoine Cully</p>
+      <p class="lab">Adaptive &amp; Intelligent Robotics Lab, Imperial College London</p>
+
+      <div class="venue-wrap">
+                  <span class="venue-badge" role="text" aria-label="Conference: CoRL 2025, Seoul, South Korea">
+            <span class="venue-dot" aria-hidden="true"></span>
+            <strong>CoRL 2025<span class="venue-location"> · Seoul, South Korea </span></strong>
+          </span>
+      </div>
+
+      <div class="hero-figure">
+        <div class="hero-video-wrap">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster=""
+            webkit-playsinline
+            title="URSA project video"
+          >
+            <source src="assets/header.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <div class="cta">
+        <a class="btn primary" href="assets/URSA_CoRL_2025.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open paper PDF">
+          <svg class="icon icon-lg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="currentColor" d="M325,105H250a5,5,0,0,1-5-5V25a5,5,0,0,1,10,0V95h70a5,5,0,0,1,0,10Z"/>
+            <path fill="currentColor" d="M325,154.83a5,5,0,0,1-5-5V102.07L247.93,30H100A20,20,0,0,0,80,50v98.17a5,5,0,0,1-10,0V50a30,30,0,0,1,30-30H250a5,5,0,0,1,3.54,1.46l75,75A5,5,0,0,1,330,100v49.83A5,5,0,0,1,325,154.83Z"/>
+            <path fill="currentColor" d="M300,380H100a30,30,0,0,1-30-30V275a5,5,0,0,1,10,0v75a20,20,0,0,0,20,20H300a20,20,0,0,0,20-20V275a5,5,0,0,1,10,0v75A30,30,0,0,1,300,380Z"/>
+            <path fill="currentColor" d="M275,280H125a5,5,0,0,1,0-10H275a5,5,0,0,1,0,10Z"/>
+            <path fill="currentColor" d="M200,330H125a5,5,0,0,1,0-10h75a5,5,0,0,1,0,10Z"/>
+            <path fill="currentColor" d="M325,280H75a30,30,0,0,1-30-30V173.17a30,30,0,0,1,30-30h.2l250,1.66a30.09,30.09,0,0,1,29.81,30V250A30,30,0,0,1,325,280ZM75,153.17a20,20,0,0,0-20,20V250a20,20,0,0,0,20,20H325a20,20,0,0,0,20-20V174.83a20.06,20.06,0,0,0-19.88-20l-250-1.66Z"/>
+            <path fill="currentColor" d="M145,236h-9.61V182.68h21.84q9.34,0,13.85,4.71a16.37,16.37,0,0,1-.37,22.95,17.49,17.49,0,0,1-12.38,4.53H145Zm0-29.37h11.37q4.45,0,6.8-2.19a7.58,7.58,0,0,0,2.34-5.82,8,8,0,0,0-2.17-5.62q-2.17-2.34-7.83-2.34H145Z"/>
+            <path fill="currentColor" d="M183,236V182.68H202.7q10.9,0,17.5,7.71t6.6,19q0,11.33-6.8,18.95T200.55,236Zm9.88-7.85h8a14.36,14.36,0,0,0,10.94-4.84q4.49-4.84,4.49-14.41a21.91,21.91,0,0,0-3.93-13.22a12.22,12.22,0,0,0-10.37-5.41h-9.14Z"/>
+            <path fill="currentColor" d="M245.59,236H235.7V182.68h33.71v8.24H245.59v14.57h18.75v8H245.59Z"/>
+          </svg>
+          <span>Paper</span>
+        </a>
+
+        <a class="btn" href="assets/URSA_poster.pdf" target="_blank" rel="noopener noreferrer">
+          <img class="icon" src="assets/icons/chart.svg" alt="" aria-hidden="true">
+          <span>Poster</span>
+        </a>
+
+        <!-- <a class="btn" href="assets/URSA_slides.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open slides PDF">
+        <span class="icon-emoji" aria-hidden="true">📽️</span> <span>Slides</span>
+        </a> -->
+
+        <a class="btn" href="https://x.com/your_handle/status/1234567890" target="_blank" rel="noopener noreferrer" aria-label="Open X post">
+          <img class="icon icon-lg" src="assets/icons/X_logo_2023.svg" alt="" aria-hidden="true">
+          <!-- <span>X</span> -->
+        </a>
+
+        <a class="btn" href="#" id="copy-bib">
+          <span>Copy BibTeX</span>
+        </a>
+
+        <a class="btn" href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener noreferrer">
+          <img class="icon" src="assets/icons/video.svg" alt="" aria-hidden="true">
+          <span>Extended Video</span>
+        </a>
+
+        <a class="btn disabled" href="#" onclick="return false;">
+          <img class="icon" src="assets/icons/github.svg" alt="" aria-hidden="true">
+          <span>Code (coming soon)</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Abstract -->
+    <section id="paper" class="container section">
+      <h2>Abstract</h2>
+      <p>
+        Autonomous skill discovery aims to enable robots to acquire diverse behaviors without explicit supervision.
+        Learning such behaviors directly on physical hardware remains challenging due to safety and data efficiency constraints.
+        Existing methods, including Quality-Diversity Actor-Critic (QDAC), require manually defined skill spaces and carefully tuned heuristics, limiting real-world applicability.
+        We propose <strong style="color: var(--accent);">Unsupervised Real-world Skill Acquisition (URSA)</strong>, an extension of QDAC that enables robots to autonomously discover and master diverse, high-performing
+        skills directly in the real world. We demonstrate that URSA successfully discovers diverse locomotion skills on a Unitree A1 quadruped in both simulation
+        and the real world. Our approach supports both heuristic-driven skill discovery and fully unsupervised settings. We also show that the learned skill repertoire can be
+        reused for downstream tasks such as real-world damage adaptation, where URSA outperforms all baselines in 5 out of 9 simulated and 3 out of 5 real-world damage
+        scenarios. Our results establish a new framework for real-world robot learning that enables continuous skill discovery with limited human intervention.
+      </p>
+    </section>
+
+    <!-- Key Results -->
+    <section id="videos" class="container section">
+      <h2>Key Results</h2>
+      
+      <p>
+        URSA leverages world models and quality-diversity algorithms to enable autonomous skill discovery directly in the real world—without requiring simulation. <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener noreferrer"><strong>Watch the extended video</strong></a> 
+        for a comprehensive overview of our method and all the key results demonstrated below.
+      </p>
+      
+      <div class="video-grid">
+        <div class="video-item">
+          <h3>Unsupervised Behavior Discovery</h3>
+          <div class="video-wrap">
+            <video
+              controls
+              preload="metadata"
+              title="Robot learning unsupervised behaviors for forward movement"
+            >
+              <source src="assets/ursa_unsupervised_training.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p>With URSA, the robot discovers diverse locomotion skills without explicit supervision over 5 hours directly in the real world (no simulation), guided by a reward for forward velocity.
+          </p>
+        </div>
+
+        <div class="video-item">
+          <h3>Few-Shot Adaptation with ITE</h3>
+          <div class="video-wrap">
+            <video
+              controls
+              preload="metadata"
+              title="Leveraging learned repertoire for few-shot adaptation using ITE algorithm"
+            >
+              <source src="assets/ursa_ite.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p>Using the <a href="https://arxiv.org/pdf/1407.3501" target="_blank" rel="noopener noreferrer">Intelligent Trial and Error</a> algorithm, we demonstrate how the learned skill repertoire enables rapid adaptation to damage scenarios with no additional training.</p>
+        </div>
+
+        <div class="video-item">
+          <h3>Real-World Supervised Learning</h3>
+          <div class="video-wrap">
+            <video
+              controls
+              preload="metadata"
+              title="Learning supervised features directly in the real world"
+            >
+              <source src="assets/ursa_supervised_training.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p>URSA can also learn from heuristic-based skill definitions, enabling the robot to track diverse target velocities—both forward and angular—through on-robot training without simulation.</p>
+        </div>
+
+        <div class="video-item">
+          <h3>Velocity and Angle Control</h3>
+          <div class="video-wrap">
+            <video
+              controls
+              preload="metadata"
+              title="Controlling robot velocity and angle using learned behaviors"
+            >
+              <source src="assets/ursa_controls.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p>The learned repertoire enables control of the robot's velocity and turning angle by selecting appropriate behaviors from the discovered skill set.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Citation -->
+    <section id="bibtex" class="container section">
+      <h2>Citation</h2>
+      <pre id="bibtex-block"><span class="bibtex-entry-type">@inproceedings</span><span class="bibtex-bracket">{</span><span class="bibtex-key">grillotti2025ursa</span><span class="bibtex-comma">,</span>
+  <span class="bibtex-field">title</span><span class="bibtex-equals">=</span><span class="bibtex-bracket">{</span><span class="bibtex-value">From Tabula Rasa to Emergent Abilities: Discovering Robot Skills via Real-World Unsupervised Quality-Diversity</span><span class="bibtex-bracket">}</span><span class="bibtex-comma">,</span>
+  <span class="bibtex-field">author</span><span class="bibtex-equals">=</span><span class="bibtex-bracket">{</span><span class="bibtex-value">Grillotti, Luca and Coiffard, Lisa and Pang, Oscar and Faldor, Maxence and Cully, Antoine</span><span class="bibtex-bracket">}</span><span class="bibtex-comma">,</span>
+  <span class="bibtex-field">booktitle</span><span class="bibtex-equals">=</span><span class="bibtex-bracket">{</span><span class="bibtex-value">Conference on Robot Learning (CoRL)</span><span class="bibtex-bracket">}</span><span class="bibtex-comma">,</span>
+  <span class="bibtex-field">year</span><span class="bibtex-equals">=</span><span class="bibtex-bracket">{</span><span class="bibtex-value">2025</span><span class="bibtex-bracket">}</span><span class="bibtex-comma">,</span>
+  <span class="bibtex-field">address</span><span class="bibtex-equals">=</span><span class="bibtex-bracket">{</span><span class="bibtex-value">Seoul, Korea</span><span class="bibtex-bracket">}</span>
+<span class="bibtex-bracket">}</span></pre>
+      <div class="cta" style="margin-top:12px;">
+        <a class="btn small" href="#" id="copy-bib-2">Copy BibTeX</a>
+      </div>
+    </section>
+
+    <!-- Optional: add a #code section later to match the nav link -->
+    <!--
+    <section id="code" class="container section">
+      <h2>Resources</h2>
+      <ul class="links">
+        <li>📄 <a href="assets/URSA_CoRL_2025.pdf" target="_blank" rel="noopener">Paper (PDF)</a></li>
+        <li>🧑‍💻 <a href="https://github.com/your/repo" target="_blank" rel="noopener">Code</a></li>
+        <li>🖼️ <a href="assets/URSA_poster.pdf" target="_blank" rel="noopener">Poster</a></li>
+        <li>📽️ <a href="assets/URSA_slides.pdf" target="_blank" rel="noopener">Slides</a></li>
+      </ul>
+    </section>
+    -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Grillotti, Coiffard, Pang, Faldor, Cully · CoRL 2025</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

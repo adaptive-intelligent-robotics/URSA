@@ -1,0 +1,760 @@
+/* ---------- Design tokens ---------- */
+:root{
+  --bg:#ffffff;
+  --ink:#0a0a0a;
+  --muted:#626262;
+  --rule:#e6e6e6;
+  --accent:#5a4df5;
+  --accent-2:#8b82ff;
+
+  --font-body:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-display:"Fraunces", Georgia, "Times New Roman", serif;
+
+  --max: 960px;
+  --rad: 14px;
+}
+
+/* ---------- Base ---------- */
+*{ box-sizing: border-box; }
+html,body{ margin:0; padding:0; }
+html{ -webkit-text-size-adjust: 100%; }
+body{
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1,h2,h3{
+  font-family: var(--font-display);
+  letter-spacing: 0;
+  margin: 0 0 .5rem 0;
+}
+h1{ font-size: clamp(2rem, 4.2vw, 2.75rem); line-height: 1.12; text-wrap: balance; }
+h2{ font-size: clamp(1.25rem, 2.4vw, 1.5rem); line-height: 1.2; }
+.container{ max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+/* ---------- Header ---------- */
+.site-header{
+  position: sticky; top:0; z-index: 20;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Mobile header adjustments */
+@media (max-width: 768px) {
+  .site-header {
+    background: rgba(255,255,255,.95);
+  }
+}
+.nav{ display:flex; align-items:center; justify-content:space-between; min-height:60px; }
+.brand{ font-weight:700; letter-spacing:.2px; text-decoration:none; color:var(--ink); }
+.nav-links a{ color:#222; text-decoration:none; margin-left:14px; font-size:.95rem; }
+.nav-links a:hover{ color:var(--accent); }
+
+/* Hide mobile nav toggle on larger screens */
+.nav-toggle { display: none; }
+
+/* Conference badge */
+.venue-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.venue-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  background: rgba(107, 92, 255, 0.08); /* soft accent */
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+  text-transform: none;
+  box-shadow: 0 6px 20px rgba(107, 92, 255, 0.12);
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.venue-location {
+  font-weight: 400;
+}
+
+.conference-name {
+  font-weight: 700;
+}
+
+
+
+
+
+/* ---------- Hero ---------- */
+.hero{ padding: 56px 0 22px; text-align: center; }
+.eyebrow{
+  color:#2a2a2a; text-transform:uppercase; letter-spacing:.12em;
+  font-weight:700; font-size:.76rem;
+}
+.authors{
+  margin-top: 10px;
+  font-size: 1.06rem; font-weight: 600; color: #151515; letter-spacing:.2px; text-wrap: balance; word-spacing:.2rem;
+}
+.lab{ margin-top: 2px; color: var(--muted); }
+
+/* ---------- Hero figure (matte-style) ---------- */
+.hero-figure{
+  margin: 18px auto 10px; max-width: var(--max);
+  border: 1px solid var(--rule); border-radius: var(--rad); padding: 16px;
+  background: #fff; background-clip: padding-box; box-shadow: 0 6px 24px rgba(0,0,0,.06);
+  overflow: hidden;
+}
+.hero-figure img{ display:block; width:100%; height:auto; border-radius: 10px; }
+.hero-video-wrap{
+  position:relative;
+  border-radius: 10px;
+  overflow:hidden;
+  background: #000;
+}
+.hero-figure video{ 
+  display:block; 
+  width:100%; 
+  height:auto; 
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* ---------- CTA (editorial buttons) ---------- */
+.cta{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top: 14px; }
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding: 10px 14px; border-radius: 12px; font-weight: 600;
+  border: 1px solid var(--rule); background:#fff; color: var(--ink);
+  text-decoration:none; transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+  min-width: 120px; justify-content: center;
+}
+.btn:hover{ transform: translateY(-1px); border-color:#d5d5d5; box-shadow: 0 6px 18px rgba(0,0,0,.06); }
+.btn.primary{ 
+  background: #fff; 
+  color: var(--accent); 
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(107, 92, 255, 0.08);
+}
+.btn.primary:hover{ 
+  box-shadow: 0 8px 24px rgba(107, 92, 255, 0.15);
+  border-color: var(--accent-2);
+}
+.btn.small{ padding:8px 12px; font-size:.92rem; }
+.btn.disabled{ 
+  background: #f8f8f8; 
+  color: var(--muted); 
+  border-color: #e0e0e0;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.btn.disabled:hover{ 
+  transform: none; 
+  box-shadow: none; 
+  border-color: #e0e0e0;
+}
+
+/* Icon sizing */
+.icon{ width: 22px; height: 22px; display:inline-block; }
+.icon-lg{ width: 22px; height: 22px; } /* slightly larger for PDF/X */
+.btn.primary .icon{ 
+  color: var(--accent) !important;
+}
+.btn.primary .icon path{
+  stroke: currentColor;
+  stroke-width: 5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* ---------- Sections ---------- */
+.section{ padding: 36px 0; border-top: 1px solid var(--rule); }
+.section-lede{ color: var(--muted); max-width: 70ch; margin: 0 auto; text-align: left; }
+.rule{ height:1px; background: var(--rule); margin: 26px 0; }
+
+/* ---------- Video ---------- */
+.video-section {
+  background: #000;
+  padding: 36px 0;
+  border-top: 1px solid var(--rule);
+  width: 100%;
+}
+
+.video-wrap{
+  position:relative;
+  border:0px solid var(--rule); border-radius: var(--rad);
+  overflow:hidden; box-shadow: 0 6px 24px rgba(0,0,0,.08);
+  background: #fff;
+}
+.video-wrap iframe, .video-wrap video{ 
+  width:100%; 
+  height:auto;
+  display:block; 
+  border:0; 
+  background:#fff;
+}
+
+/* Ensure consistent video sizing in grid regardless of text length */
+.video-grid .video-wrap {
+  aspect-ratio: 16/9;
+}
+
+.video-grid .video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Video Grid ---------- */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.video-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure consistent height in grid */
+}
+
+.video-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+}
+
+.video-item .video-wrap {
+  margin-bottom: 0.75rem;
+  /* Remove flex-grow so video size is consistent */
+}
+
+.video-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+  flex-grow: 1; /* Let text area take remaining space */
+}
+
+.video-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 1.1rem;
+}
+
+.video-cta.intro {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--rad);
+  background: rgba(90, 77, 245, 0.02);
+  border-top: 1px solid var(--rule);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.video-cta a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.video-cta a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+
+/* ---------- Code / BibTeX ---------- */
+pre{
+  background:#0b0b0b; color:#fff;
+  border-radius:12px; padding:14px 16px; overflow:auto; font-size:.95rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+
+/* BibTeX syntax highlighting */
+.bibtex-entry-type { color: #9d96ff; font-weight: 600; } /* @inproceedings - lighter purple */
+.bibtex-key { color: #c4bfff; font-weight: 500; } /* grillotti2025ursa - even lighter purple */
+.bibtex-field { color: #b8b5ff; } /* title, author, etc. - lighter accent variant */
+.bibtex-value { color: #e8e8e8; } /* field values - light gray for readability */
+.bibtex-bracket { color: #888; } /* { } - lighter than muted for better visibility */
+.bibtex-equals { color: #888; } /* = */
+.bibtex-comma { color: #888; } /* , */
+
+/* ---------- Footer ---------- */
+.site-footer{ border-top: 1px solid var(--rule); padding: 26px 0; margin-top: 36px; text-align:center; color: var(--muted); }
+
+/* ---------- Responsive ---------- */
+
+/* Small laptop/desktop windows (common during development) */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 40px;
+  }
+  
+  /* Add universal content margins */
+  .video-wrap,
+  .hero-figure,
+  pre {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  
+  /* Fix section content (abstract, etc.) margins */
+  .section p,
+  .section h2 {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+/* Mobile navigation improvements */
+@media (max-width: 768px) {
+  .nav {
+    position: relative;
+    padding: 12px 0;
+  }
+  
+  .brand {
+    font-size: 1.1rem;
+    z-index: 10;
+  }
+  
+  /* Hamburger menu button */
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .nav-toggle:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .nav-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--ink);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 1px;
+    transform-origin: center;
+  }
+  
+  /* Animate hamburger to X when open */
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Hide navigation by default on mobile */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: saturate(180%) blur(12px);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    padding: 16px;
+    margin-top: 8px;
+    z-index: 20;
+  }
+  
+  /* Show navigation when toggled */
+  .nav-links.nav-open {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: slideDown 0.3s ease;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .nav-links a {
+    margin: 0;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--ink);
+    background: transparent;
+    border: none;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+  
+  .nav-links a:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-1px);
+  }
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not (backdrop-filter: blur(12px)) {
+  @media (max-width: 768px) {
+    .nav-links {
+      background: rgba(255, 255, 255, 0.98);
+    }
+  }
+}
+
+/* Alternative: Keep simple inline layout for medium mobile screens */
+@media (min-width: 480px) and (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 8px 0;
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 8px;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    animation: none;
+  }
+  
+  .nav-links a {
+    margin: 0;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    background: rgba(90, 77, 245, 0.08);
+    border: 1px solid rgba(90, 77, 245, 0.15);
+    color: var(--accent);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    flex: 0 1 auto;
+  }
+  
+  .nav-links a:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .hero {
+    padding: 32px 0 20px;
+  }
+  
+  /* Venue badge mobile spacing */
+  .venue-wrap {
+    margin-bottom: 12px;
+  }
+  
+  h1 {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+    margin-bottom: 0.75rem;
+  }
+  
+  h2 {
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
+  }
+  
+  /* Override navigation for small mobile screens */
+  .nav-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: saturate(180%) blur(12px);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    padding: 16px;
+    margin-top: 8px;
+    z-index: 20;
+  }
+  
+  .nav-links.nav-open {
+    display: flex !important;
+    flex-direction: column;
+    gap: 8px;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .nav-links a {
+    margin: 0;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--ink);
+    background: transparent;
+    border: none;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+  
+  .nav-links a:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-1px);
+  }
+  
+  /* CTA buttons mobile layout */
+  .cta {
+    gap: 10px;
+    margin-top: 24px;
+    justify-content: center;
+  }
+  
+  .btn {
+    flex: 0 1 auto;
+    min-width: 140px;
+    max-width: 180px;
+    justify-content: center;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  
+  /* Ensure buttons wrap nicely on very small screens */
+  @media (max-width: 480px) {
+    .btn {
+      min-width: calc(50% - 5px);
+      max-width: none;
+      flex: 1 1 calc(50% - 5px);
+    }
+  }
+  
+  /* Authors and lab text */
+  .authors {
+    font-size: 1rem;
+    line-height: 1.5;
+    word-spacing: 0.1rem;
+    margin-top: 12px;
+  }
+  
+  .lab {
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+  
+  /* Venue badge mobile adjustments */
+  .venue-badge {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+  
+  /* Hero figure mobile */
+  .hero-figure {
+    margin: 16px 4px 8px; /* Add side margins */
+    padding: 12px;
+  }
+  
+  /* Section spacing */
+  .section {
+    padding: 28px 0;
+  }
+  
+  /* Improve paragraph readability on mobile */
+  .section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .video-grid {
+    gap: 1.5rem;
+  }
+  
+  .video-item h3 {
+    font-size: 1.05rem;
+  }
+}
+
+/* Continue mobile styles */
+@media (max-width: 768px) {
+  /* Video mobile */
+  .video-wrap {
+    border-radius: 10px;
+    margin: 0 4px; /* Extra breathing room for video */
+  }
+  
+  /* Hero video mobile fixes */
+  .hero-figure video {
+    max-width: 100%;
+    height: auto !important;
+    object-fit: contain;
+  }
+  
+  .hero-video-wrap {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Video grid mobile */
+  .video-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .video-item h3 {
+    font-size: 1rem;
+  }
+  
+  /* BibTeX mobile */
+  pre {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    overflow-x: auto;
+    margin: 0 4px; /* Extra breathing room */
+  }
+  
+  /* Footer */
+  .site-footer {
+    padding: 20px 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* Very small screens (older phones) */
+@media (max-width: 400px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .hero {
+    padding: 20px 0 16px;
+  }
+  
+  /* Venue wrap for very small screens */
+  .venue-wrap {
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: clamp(1.4rem, 7vw, 1.8rem);
+    line-height: 1.2;
+  }
+  
+  .authors {
+    font-size: 0.95rem;
+  }
+  
+  .venue-badge {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .btn {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
+  
+  .hero-figure {
+    padding: 8px;
+    margin: 12px 2px 6px; /* Maintain margins on very small screens */
+  }
+  
+  /* Very small mobile specific adjustments */
+  .cta {
+    gap: 8px;
+  }
+  
+  pre {
+    font-size: 0.8rem;
+    padding: 10px 12px;
+    margin: 0 2px; /* Maintain breathing room on very small screens */
+  }
+}
+
+/* Medium laptop windows */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .container {
+    padding: 0 48px;
+  }
+}
+
+/* Tablet landscape and medium screens */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding: 0 36px;
+  }
+  
+  .hero {
+    padding: 48px 0 24px;
+  }
+  
+  .cta {
+    gap: 12px;
+  }
+  
+  .btn {
+    padding: 11px 16px;
+  }
+}
