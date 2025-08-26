@@ -1,6 +1,4 @@
-# URSA project page
+# Unsupervised Real-world Skill Acquisition (URSA)
 
-**TODO**
-1. Put your paper PDF at `assets/URSA_CoRL_2025.pdf` (or update the link in `index.html`).
-2. Replace `YOUTUBE_ID_HERE` in `index.html` with your actual YouTube ID.
-3. Update the Code / arXiv links and BibTeX in `index.html`.
+Code and website for the paper _From Tabula Rasa to Emergent Abilities: Discovering Robot Skills via Real-World Unsupervised Quality-Diversity_ (CoRL 2025)
+
